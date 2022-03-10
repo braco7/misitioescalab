@@ -13,10 +13,7 @@ export class CajaPrecioComponent implements OnInit {
   precio = 0
 
   ngOnInit(): void {
-    /* this.bitcoinService.get()
-      .subscribe(resp => { this.precio = resp }) */
+    this.bitcoinService.get()
+      .subscribe(resp => { this.precio = resp })
   }
-
-
-
 }
