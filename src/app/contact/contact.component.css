@@ -1,0 +1,24 @@
+form {
+  display: flex;
+  flex-direction: column;
+}
+
+button {
+  padding: 10px;
+}
+
+.center {
+  width: 25%;
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%);
+  padding: 20px 20px 30px 20px;
+  border: 1px grey solid;
+  border-radius: 0.5rem;
+}
+h2 {
+  text-align: center;
+  font-size: 2rem;
+  margin-bottom: 3rem;
+}

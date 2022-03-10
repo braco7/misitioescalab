@@ -1,0 +1,9 @@
+p {
+  color: white;
+  background-color: rgb(115, 133, 12);
+  margin: 0;
+  padding: 0 2rem;
+  text-align: right;
+  font-size: 0.7rem;
+  line-height: 0.8rem;
+}

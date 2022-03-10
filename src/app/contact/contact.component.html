@@ -1,0 +1,74 @@
+<div class="center">
+  <h2>Escríbanos</h2>
+  <!-- Selector de opciones -->
+  <form [formGroup]="formulario">
+    <mat-form-field appearance="fill">
+      <mat-label>Escoja una categoría</mat-label>
+      <mat-select placeholder="Select">
+        <mat-option *ngFor="let item of opciones; let i = index" [value]="item">
+          {{ opciones[i] }}
+        </mat-option>
+      </mat-select>
+    </mat-form-field>
+    <!-- Input de nombre completo -->
+    <mat-form-field appearance="fill">
+      <mat-label>Nombre</mat-label>
+      <input
+        autocomplete="off"
+        (keyup)="validar()"
+        #nombreCompleto
+        matInput
+        placeholder="Nombre completo"
+        formControlName="nombre"
+      />
+      <mat-error
+        *ngIf="
+          formulario.controls.nombre.hasError('minlength') ||
+          formulario.controls.nombre.hasError('maxlength')
+        "
+      >
+        Debe tener entre 3 y 15 caracteres
+      </mat-error>
+      <mat-error *ngIf="formulario.controls.nombre.hasError('required')">
+        El campo <strong>required</strong>
+      </mat-error>
+    </mat-form-field>
+    <!-- <h4 *ngIf="mensaje">{{ mensaje }}</h4> -->
+
+    <!-- Input de Correo Electrónico -->
+
+    <mat-form-field appearance="fill">
+      <mat-label>Correo</mat-label>
+      <input
+        autocomplete="off"
+        matInput
+        placeholder="Correo"
+        formControlName="correo"
+      />
+      <mat-error
+        *ngIf="
+          formulario.controls.correo.hasError('email') &&
+          !formulario.controls.correo.hasError('required')
+        "
+      >
+        Debe tener formato de Email
+      </mat-error>
+      <mat-error *ngIf="formulario.controls.correo.hasError('required')">
+        Email is <strong>required</strong>
+      </mat-error>
+    </mat-form-field>
+
+    <!-- Input de mensaje -->
+
+    <mat-form-field appearance="fill">
+      <mat-label>Mensaje</mat-label>
+      <textarea
+        autocomplete="off"
+        matInput
+        placeholder="Escriba su mensaje"
+      ></textarea>
+    </mat-form-field>
+
+    <button mat-raised-button color="warn">Enviar</button>
+  </form>
+</div>
