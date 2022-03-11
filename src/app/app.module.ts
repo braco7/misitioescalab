@@ -9,13 +9,15 @@ import { MaterialModule } from './material/material/material.module';
 import { CajaPrecioComponent } from './caja-precio/caja-precio.component';
 import { HttpClientModule } from '@angular/common/http';
 import { FooterComponent } from './shared/footer/footer.component';
+import { HomeComponent } from './home/home.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     NavbarComponent,
     CajaPrecioComponent,
-    FooterComponent
+    FooterComponent,
+    HomeComponent
   ],
   imports: [
     BrowserModule,

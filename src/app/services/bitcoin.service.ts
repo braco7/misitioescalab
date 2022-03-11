@@ -1,36 +1,44 @@
-import { HttpClient, HttpHeaders } from '@angular/common/http';
+import { HttpClient, HttpHeaders, HttpParams } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { map } from 'rxjs/operators'
-import { Moneda } from '../interfaces/moneda';
+import { Coin, Moneda } from '../interfaces/moneda';
+
+export enum Monedas {
+  BTC = "bitcoin",
+  ETH = "ethereum",
+}
 
 @Injectable({
   providedIn: 'root'
 })
 export class BitcoinService {
+  //private apiKey: string = "34A77654-5D78-4012-8594-EC03CC9E28D4"
+  private url: string = "https://api.coinstats.app/public/v1/coins"
+  private urlBTC: string = "https://api.coinstats.app/public/v1/coins/bitcoin?currency=USD"
 
-  precio: any = 0
-  private url: string = "https://rest.coinapi.io/"
-
-  private apiKey: string = "34A77654-5D78-4012-8594-EC03CC9E28D4"
-
-  moneda: string = "BTC"
-
+  /* precioBTC$: Observable<any> = this.http.get<any>(`${this.urlBTC}`)
+    .pipe(map((resp: any) => resp)
+    ) */
   constructor(private http: HttpClient) { }
 
-  httpOptions = {
-    headers: new HttpHeaders({
-      'X-CoinAPI-Key': this.apiKey,
-      'Accept': 'application/json',
-      'Accept-Encoding': "deflate,gzip"
-    })
+  getBTC() {
+    return this.http.get<Moneda>(this.urlBTC)
+
   }
 
-  get() {
-    return this.http.get(`${this.url}v1/assets/${this.moneda}`, this.httpOptions)
-      .pipe(map((x: any) => x[0].price_usd)
+
+
+  getAll(cantidad: number) {
+    const httpOptions = {
+      params: new HttpParams({ fromString: `limit=${cantidad}&currency=USD` })
+    }
+    return this.http.get<any>(`${this.url}`, httpOptions)
+      .pipe(map((resp) => {
+        return resp.coins
+      })
       )
   }
-
 }
+
 
 
