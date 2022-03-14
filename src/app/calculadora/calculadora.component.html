@@ -1,4 +1,36 @@
-<!-- <p *ngFor="let item of listado">{{ item }}</p> -->
-<h4 *ngFor="let item of listado">{{ item.price }}</h4>
+<!-- <p *ngFor="let item of listado">{{ item.id }} {{ item.price }}</p> -->
+<table mat-table [dataSource]="dataSource" class="mat-elevation-z8">
+  <!--- Note that these columns can be defined in any order.
+          The actual rendered columns are set as a property on the row definition" -->
+
+  <!-- Position Column -->
+  <ng-container matColumnDef="Moneda">
+    <th mat-header-cell *matHeaderCellDef>Moneda</th>
+    <td mat-cell *matCellDef="let element">{{ element.name }}</td>
+  </ng-container>
+
+  <!-- Name Column -->
+  <ng-container matColumnDef="Precio">
+    <th mat-header-cell *matHeaderCellDef>Precio</th>
+    <td mat-cell *matCellDef="let element">
+      {{ element.price | number: "1.0-6" }}
+    </td>
+  </ng-container>
+
+  <!-- Weight Column -->
+  <ng-container matColumnDef="Volumen">
+    <th mat-header-cell *matHeaderCellDef>Volumen</th>
+    <td mat-cell *matCellDef="let element">{{ element.volume | number }}</td>
+  </ng-container>
+
+  <!-- Symbol Column -->
+  <ng-container matColumnDef="Acciones">
+    <th mat-header-cell *matHeaderCellDef>Acciones</th>
+    <td mat-cell *matCellDef="let element">{{ element.symbol }}</td>
+  </ng-container>
+
+  <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
+  <tr mat-row *matRowDef="let row; columns: displayedColumns"></tr>
+</table>
 
 <router-outlet></router-outlet>

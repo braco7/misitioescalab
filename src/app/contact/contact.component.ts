@@ -22,9 +22,7 @@ export class ContactComponent implements OnInit {
 
   constructor() { }
 
-  ngOnInit(): void {
-
-  }
+  ngOnInit(): void { }
 
   validar() {
     if (this.formulario.get("nombre")?.dirty && this.formulario.get("nombre")?.invalid) {
@@ -32,8 +30,5 @@ export class ContactComponent implements OnInit {
     } else {
       this.mensaje = ""
     }
-
   }
-
-
 }

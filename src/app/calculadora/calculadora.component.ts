@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { Coin } from '../interfaces/moneda';
+import { Coin, Moneda } from '../interfaces/moneda';
 import { BitcoinService } from '../services/bitcoin.service';
 
 
@@ -10,19 +10,26 @@ import { BitcoinService } from '../services/bitcoin.service';
 })
 export class CalculadoraComponent implements OnInit {
 
-  listado: Coin[] = []
+  listado: Moneda[] = []
+
+
+
+
 
   constructor(private bitcoinService: BitcoinService) { }
 
   ngOnInit(): void {
 
-    this.bitcoinService.getAll(5)
+    this.bitcoinService.getAll(40)
       .subscribe(resp => {
         console.log(resp)
         this.listado = resp
+        this.dataSource = this.listado;
+
       })
+
   }
-
-
+  displayedColumns: string[] = ['Moneda', 'Precio', 'Volumen', 'Acciones'];
+  dataSource = this.listado;
 
 }  
