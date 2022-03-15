@@ -10,6 +10,8 @@ import { CajaPrecioComponent } from './caja-precio/caja-precio.component';
 import { HttpClientModule } from '@angular/common/http';
 import { FooterComponent } from './shared/footer/footer.component';
 import { HomeComponent } from './home/home.component';
+import { AuthModule } from '@auth0/auth0-angular';
+
 
 @NgModule({
   declarations: [
@@ -24,7 +26,12 @@ import { HomeComponent } from './home/home.component';
     AppRoutingModule,
     BrowserAnimationsModule,
     MaterialModule,
-    HttpClientModule
+    HttpClientModule,
+
+    AuthModule.forRoot({
+      domain: 'dev-n7di-wym.us.auth0.com',
+      clientId: 'J2nbsGEjeLHa4c5V9eLwnHmhnJNp7eBz'
+    })
   ],
   providers: [],
   bootstrap: [AppComponent]

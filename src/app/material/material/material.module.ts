@@ -25,7 +25,7 @@ import { MatTableModule } from '@angular/material/table';
     MatIconModule,
     MatToolbarModule,
     MatSelectModule,
-    MatTableModule
+    MatTableModule,
   ]
 })
 export class MaterialModule { }

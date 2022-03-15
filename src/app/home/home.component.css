@@ -1,0 +1,58 @@
+html,
+body {
+  padding: 0;
+  margin: 0;
+  width: 100%;
+  height: 100%;
+}
+
+.full {
+  width: 100%;
+  height: 78%;
+  background: url("../../assets/img/bg.jpg") no-repeat 50% 50%;
+  background-size: cover;
+  display: table;
+  margin: auto;
+  top: 0;
+}
+
+.full-inner {
+  width: 100%;
+  vertical-align: middle;
+  display: table-cell;
+}
+
+.content {
+  max-width: 700px;
+  margin: auto;
+  text-align: center;
+}
+
+.content h1 {
+  font-family: "Century Gothic", sans-serif;
+  font-size: 500%;
+  color: #f9f3f4;
+  text-shadow: 0 0 300px black;
+  margin-bottom: 50px;
+}
+
+.content a {
+  border-radius: 9px;
+  text-decoration: none;
+  color: #f9f3f4;
+  font-family: "Century Gothic", sans-serif;
+  font-weight: bold;
+  border: 3px solid;
+  padding: 7px 13px;
+}
+
+.content a:hover {
+  color: #2196f3;
+}
+
+p {
+  font-size: 160%;
+  line-height: 200%;
+  margin: 4rem;
+  font-family: sans-serif;
+}
