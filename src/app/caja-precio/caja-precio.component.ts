@@ -1,5 +1,4 @@
 import { Component, OnInit } from '@angular/core';
-import { Moneda } from '../interfaces/moneda';
 import { BitcoinService } from '../services/bitcoin.service';
 
 @Component({

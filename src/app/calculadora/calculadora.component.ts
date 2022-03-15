@@ -12,10 +12,6 @@ export class CalculadoraComponent implements OnInit {
 
   listado: Moneda[] = []
 
-
-
-
-
   constructor(private bitcoinService: BitcoinService) { }
 
   ngOnInit(): void {

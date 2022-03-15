@@ -30,7 +30,9 @@
   <!-- Symbol Column -->
   <ng-container matColumnDef="Acciones">
     <th mat-header-cell *matHeaderCellDef>Acciones</th>
-    <td mat-cell *matCellDef="let element">Calcular - Ver detalle</td>
+    <td mat-cell *matCellDef="let element">
+      <a routerLink="detalle">Ver detalle</a>
+    </td>
   </ng-container>
 
   <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
