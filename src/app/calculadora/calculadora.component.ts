@@ -20,7 +20,7 @@ export class CalculadoraComponent implements OnInit {
 
   ngOnInit(): void {
 
-    this.bitcoinService.getAll(40)
+    this.bitcoinService.getAll(15)
       .subscribe(resp => {
         console.log(resp)
         this.listado = resp
