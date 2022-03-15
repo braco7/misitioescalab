@@ -20,13 +20,13 @@ section {
   box-shadow: 0 1px 1px 0 rgba(0, 0, 0, 0.12);
   box-sizing: border-box;
   width: 100%;
-  text-align: left;
+  text-align: center;
   font: normal 16px sans-serif;
   padding: 45px 50px;
 }
 
 .footer-distributed .footer-left p {
-  color: #8f9296;
+  color: #ccd0d5;
   font-size: 14px;
   margin: 0;
 }
