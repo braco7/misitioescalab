@@ -1,0 +1,13 @@
+.example-card {
+  max-width: 300px;
+}
+
+.example-header-image {
+  background-image: url("https://static.coinstats.app/coins/EthereumOCjgD.png");
+  background-size: cover;
+}
+mat-list-item {
+  background: rgba(0, 139, 139, 0.7);
+  border: 1px gray solid;
+  margin: 2px;
+}

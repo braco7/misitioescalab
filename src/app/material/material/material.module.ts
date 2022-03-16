@@ -8,6 +8,8 @@ import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { MatInputModule } from '@angular/material/input';
 import { MatSelectModule } from '@angular/material/select';
 import { MatTableModule } from '@angular/material/table';
+import { MatCardModule } from '@angular/material/card';
+import { MatListModule } from '@angular/material/list';
 
 
 
@@ -17,6 +19,7 @@ import { MatTableModule } from '@angular/material/table';
     CommonModule
   ],
   exports: [
+    MatListModule,
     MatButtonModule,
     FormsModule,
     ReactiveFormsModule,
@@ -26,6 +29,7 @@ import { MatTableModule } from '@angular/material/table';
     MatToolbarModule,
     MatSelectModule,
     MatTableModule,
+    MatCardModule
   ]
 })
 export class MaterialModule { }

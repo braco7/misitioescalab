@@ -1,4 +1,29 @@
-<h3>Moneda a ser vista</h3>
-<button (click)="verMoneda()">Ver ethereum</button>
+<button mat-raised-button color="accent" (click)="verMoneda('ethereum')">
+  Ver Ethereum
+</button>
 
-<h2>{{ marketcap }}</h2>
+<mat-card class="example-card">
+  <mat-card-header>
+    <div mat-card-avatar class="example-header-image"></div>
+    <mat-card-title>{{ monedaName }}</mat-card-title>
+    <mat-card-subtitle>Symbol: {{ monedaSymbol }}</mat-card-subtitle>
+  </mat-card-header>
+  <img mat-card-image [src]="monedaImg" alt="Photo of a Shiba Inu" />
+  <mat-card-content>
+    <mat-list role="list">
+      <mat-list-item role="listitem"
+        >Price (USD): {{ price | number: "4.1-2" }}</mat-list-item
+      >
+      <mat-list-item role="listitem"
+        >Marketcap: {{ marketcap | number: "4.1-2" }}</mat-list-item
+      >
+      <mat-list-item role="listitem"
+        >Avail. Supply: {{ availablesupply | number: "4.1-2" }}</mat-list-item
+      >
+    </mat-list>
+  </mat-card-content>
+  <mat-card-actions>
+    <button mat-button>LIKE</button>
+    <button mat-button>SHARE</button>
+  </mat-card-actions>
+</mat-card>
