@@ -11,3 +11,13 @@ mat-list-item {
   border: 1px gray solid;
   margin: 2px;
 }
+
+mat-card {
+  transition: box-shadow 580ms cubic-bezier(0.4, 0, 0.2, 1);
+  display: flex;
+  position: relative;
+  background-color: rgba(122, 211, 221, 0.303);
+  border-radius: 4px;
+  flex-direction: column;
+  align-items: center;
+}

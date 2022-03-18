@@ -21,7 +21,7 @@ export class LoginComponent implements OnInit {
     private fb: FormBuilder,
     public auth: AuthService,
     private router: Router,
-    @Inject(DOCUMENT) public doc: Document) {
+    @Inject(DOCUMENT) public document: Document) {
 
     this.form = this.fb.group({
       user: ["", Validators.required],
@@ -44,7 +44,7 @@ export class LoginComponent implements OnInit {
   }
 
   logout() {
-    this.auth.logout({ returnTo: this.doc.location.origin })
+    this.auth.logout({ returnTo: this.document.location.origin })
   }
 
 

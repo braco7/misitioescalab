@@ -1,8 +1,26 @@
 <section class="full">
   <div class="full-inner">
     <div class="content">
-      <h1>Francisco Ariza</h1>
-      <a routerLink="/login">Ir a Login</a>
+      <h1>Crypto Info</h1>
+      <ng-container *ngIf="auth.isAuthenticated$ | async; else loggedOut">
+        <button
+          mat-raised-button
+          color="warn"
+          (click)="auth.logout({ returnTo: document.location.origin })"
+        >
+          Log out
+        </button>
+      </ng-container>
+
+      <ng-template #loggedOut>
+        <button
+          mat-raised-button
+          color="primary"
+          (click)="auth.loginWithRedirect()"
+        >
+          Log in
+        </button>
+      </ng-template>
     </div>
   </div>
 </section>

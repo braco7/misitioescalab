@@ -36,14 +36,14 @@ body {
   margin-bottom: 50px;
 }
 
-.content a {
-  border-radius: 9px;
+.content button {
+  padding-top: 10px;
+  padding-bottom: 10px;
+  border-radius: 5px;
+  width: 25%;
   text-decoration: none;
-  color: #f9f3f4;
-  font-family: "Century Gothic", sans-serif;
   font-weight: bold;
-  border: 3px solid;
-  padding: 7px 13px;
+  font-size: large;
 }
 
 .content a:hover {
