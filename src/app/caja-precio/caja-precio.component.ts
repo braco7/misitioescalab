@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { BitcoinService } from '../services/bitcoin.service';
+import { DataService } from '../services/data.service';
 
 @Component({
   selector: 'app-caja-precio',
@@ -8,14 +8,15 @@ import { BitcoinService } from '../services/bitcoin.service';
 })
 export class CajaPrecioComponent implements OnInit {
 
-  constructor(private bitcoinService: BitcoinService) { }
+  constructor(
+    private dataService: DataService) { }
 
   precio: number = 0
 
   ngOnInit(): void {
-    this.bitcoinService.getBTC()
+    this.dataService.getMoneda("bitcoin")
       .subscribe(resp => {
-        this.precio = resp.coin.price
+        this.precio = resp.price
       })
   }
 

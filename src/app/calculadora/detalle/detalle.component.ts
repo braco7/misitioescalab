@@ -1,24 +1,61 @@
+import { elementEventFullName } from '@angular/compiler/src/view_compiler/view_compiler';
 import { Component, Input, OnInit } from '@angular/core';
+import { ActivatedRoute } from '@angular/router';
+import { Observable } from 'rxjs';
 import { Coin, Moneda } from 'src/app/interfaces/moneda';
-import { BitcoinService } from 'src/app/services/bitcoin.service';
+import { DataService } from 'src/app/services/data.service';
 
 @Component({
   selector: 'app-detalle',
   templateUrl: './detalle.component.html',
   styleUrls: ['./detalle.component.css']
 })
+
 export class DetalleComponent implements OnInit {
 
-  @Input() moneda: string = "ethereum"
-  monedaName: string = ""
-  monedaSymbol: string = ""
-  monedaImg: string = ""
+  //monedaMostrada: Coin = {}
+  coinId: string = ""
+  @Input() coinn: string = ""
+  idDeMoneda: string = ""
+  monedaCompleta: Coin;
 
-  marketcap: number = 0
-  price: number = 0
-  availablesupply: number = 0
 
-  monedaOb: Coin = {
+  constructor(
+    private dataService: DataService,
+    private route: ActivatedRoute
+  ) { }
+
+
+  ngOnInit(): void {
+    this.coinId = this.route.snapshot.paramMap.get("id")
+
+    this.dataService.getMoneda(this.coinId)
+      .subscribe(resp => {
+        this.monedaCompleta = resp
+      })
+
+  }
+
+
+
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/* monedaOb: Coin = {
     id: '',
     icon: '',
     name: '',
@@ -36,29 +73,4 @@ export class DetalleComponent implements OnInit {
     websiteUrl: '',
     twitterUrl: '',
     exp: []
-  }
-
-
-  constructor(private bitcoinService: BitcoinService) { }
-
-
-  ngOnInit(): void {
-  }
-
-  verMoneda(moneda: string) {
-    this.bitcoinService.getMoneda(moneda)
-      .subscribe(resp => {
-        this.monedaName = resp.coin.name
-        this.monedaSymbol = resp.coin.symbol
-        this.monedaImg = resp.coin.icon
-        this.monedaOb = resp.coin
-        this.price = resp.coin.price
-        this.marketcap = resp.coin.marketCap
-        this.availablesupply = resp.coin.availableSupply
-
-        console.log(this.monedaOb)
-      })
-  }
-
-}
-
+  } */

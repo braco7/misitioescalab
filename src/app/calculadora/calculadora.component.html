@@ -31,12 +31,13 @@
   <ng-container matColumnDef="Acciones">
     <th mat-header-cell *matHeaderCellDef>Acciones</th>
     <td mat-cell *matCellDef="let element">
-      <a routerLink="detalle">Ver detalle</a>
+      <a routerLink="detalle/{{ element.id }}">Ver detalle</a>
     </td>
   </ng-container>
 
   <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
   <tr mat-row *matRowDef="let row; columns: displayedColumns"></tr>
-</table>
 
+  <!-- <app-detalle [coinn]="coined"></app-detalle> -->
+</table>
 <router-outlet></router-outlet>
