@@ -5,3 +5,20 @@
 mat-toolbar {
   padding-right: 4rem;
 }
+
+.logout-icon {
+  border-radius: 0;
+  text-align: center;
+  color: rgb(255, 255, 255);
+  background-color: red;
+  width: fit-content;
+  padding: 0 16px;
+}
+
+.login-icon {
+  background-color: rgb(0, 75, 61);
+  border-radius: 0;
+  text-align: center;
+  width: fit-content;
+  padding: 0 16px;
+}

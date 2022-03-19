@@ -23,7 +23,6 @@ export class CalculadoraComponent implements OnInit {
 
     this.dataService.getAll(15)
       .subscribe(resp => {
-        console.log(resp)
         this.listado = resp
         this.dataSource = this.listado;
 

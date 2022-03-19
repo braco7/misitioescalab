@@ -1,34 +1,36 @@
-<mat-card class="example-card">
-  <mat-card-header>
-    <div mat-card-avatar>
-      <img
-        style="width: 70%; margin: 10px 0px 5px 10px"
-        mat-card-image
-        alt="Coin Icon"
-        [src]="monedaCompleta?.icon"
-      />
-    </div>
-    <mat-card-title>{{ monedaCompleta?.id | titlecase }}</mat-card-title>
-    <mat-card-subtitle>
-      <strong>Precio (BTC):</strong>
-      {{ monedaCompleta?.priceBtc | number: "1.0-8" }}</mat-card-subtitle
-    >
-  </mat-card-header>
-  <img
-    style="width: 70%"
-    mat-card-image
-    alt="Coin Icon"
-    [src]="monedaCompleta?.icon"
-  />
-  <mat-card-content>
-    <mat-list role="list">
-      <mat-list-item role="listitem"
-        >Price (USD): {{ monedaCompleta?.price | number: "1.2-2" }}
-      </mat-list-item>
-    </mat-list>
-  </mat-card-content>
-  <mat-card-actions>
-    <button routerLink="" mat-button>HOME</button>
-    <button routerLink="/calculadora" mat-button>LISTADO</button>
-  </mat-card-actions>
-</mat-card>
+<div class="container">
+  <mat-card class="example-card">
+    <mat-card-header>
+      <div mat-card-avatar>
+        <img
+          style="width: 70%; margin: 10px 0px 5px 10px"
+          mat-card-image
+          alt="Coin Icon"
+          [src]="monedaCompleta?.icon"
+        />
+      </div>
+      <mat-card-title>{{ monedaCompleta?.id | titlecase }}</mat-card-title>
+      <mat-card-subtitle>
+        <strong>Precio (BTC):</strong>
+        {{ monedaCompleta?.priceBtc | number: "1.0-8" }}</mat-card-subtitle
+      >
+    </mat-card-header>
+    <img
+      style="width: 70%"
+      mat-card-image
+      alt="Coin Icon"
+      [src]="monedaCompleta?.icon"
+    />
+    <mat-card-content>
+      <mat-list role="list">
+        <mat-list-item role="listitem"
+          >Price (USD): {{ monedaCompleta?.price | number: "1.2-2" }}
+        </mat-list-item>
+      </mat-list>
+    </mat-card-content>
+    <mat-card-actions>
+      <button routerLink="" mat-button>HOME</button>
+      <button routerLink="/calculadora" mat-button>LISTADO</button>
+    </mat-card-actions>
+  </mat-card>
+</div>
