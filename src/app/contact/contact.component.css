@@ -11,8 +11,9 @@ button {
   width: 20%;
   margin: 10% auto;
   padding: 20px 20px 30px 20px;
-  border: 1px grey solid;
+  border: 0px grey solid;
   border-radius: 0.5rem;
+  background-color: rgb(231, 242, 243);
 }
 h2 {
   text-align: center;

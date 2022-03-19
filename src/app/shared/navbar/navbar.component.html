@@ -8,12 +8,36 @@
     <mat-icon>home</mat-icon>
   </button>
   <span class="spacer"></span>
-  <button mat-button label="Click" routerLink="/calculadora">Listado</button>
-  <button mat-button label="Click" routerLink="/contact">Contacto</button>
 
-  <span class="spacer"></span>
-  <button mat-button label="Click" routerLink="/support">
+  <button mat-button label="Click" routerLink="/calculadora">Contacto</button>
+  <button mat-button label="Click" routerLink="/calculadora">Listado</button>
+  <button mat-button label="Click" routerLink="/contact">
     Soporte a Clientes
   </button>
+
+  <span class="spacer"></span>
+  <ng-template #loggedOut>
+    <button
+      mat-icon-button
+      class="login-icon"
+      aria-label="Login button"
+      (click)="auth.loginWithRedirect()"
+    >
+      Login
+      <mat-icon>login</mat-icon>
+    </button>
+  </ng-template>
+
+  <ng-container *ngIf="auth.isAuthenticated$ | async; else loggedOut">
+    <button
+      mat-icon-button
+      class="logout-icon"
+      aria-label="Logout button"
+      (click)="auth.logout({ returnTo: document.location.origin })"
+    >
+      Logout
+      <mat-icon>logout</mat-icon>
+    </button>
+  </ng-container>
 </mat-toolbar>
 <router-outlet></router-outlet>

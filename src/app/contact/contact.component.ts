@@ -12,7 +12,8 @@ export class ContactComponent implements OnInit {
 
   formulario = new FormGroup
     ({
-      nombre: new FormControl("", [Validators.required, Validators.minLength(3), Validators.maxLength(15)]),
+      opciones: new FormControl("", [Validators.required]),
+      nombre: new FormControl("", [Validators.required, Validators.minLength(4)]),
       correo: new FormControl("", [Validators.required, Validators.email])
     })
 
