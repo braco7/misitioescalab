@@ -8,12 +8,15 @@
     <mat-icon>home</mat-icon>
   </button>
   <span class="spacer"></span>
-
   <button mat-button label="Click" routerLink="/contact">Contacto</button>
-  <button mat-button label="Click" routerLink="/calculadora">Listado</button>
-  <button mat-button label="Click" routerLink="/support">
-    Soporte a Clientes
-  </button>
+  <ng-template #public> </ng-template>
+
+  <ng-container #internal *ngIf="auth.isAuthenticated$ | async; else public">
+    <button mat-button label="Click" routerLink="/calculadora">Listado</button>
+    <button mat-button label="Click" routerLink="/support">
+      Soporte a Clientes
+    </button>
+  </ng-container>
 
   <span class="spacer"></span>
   <ng-template #loggedOut>

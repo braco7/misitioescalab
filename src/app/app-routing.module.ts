@@ -9,7 +9,8 @@ const routes: Routes = [
   { path: '', redirectTo: 'home', pathMatch: "full" },
   { path: 'calculadora', canActivate: [GuardianGuard], loadChildren: () => import('./calculadora/calculadora.module').then(m => m.CalculadoraModule) },
   { path: 'login', loadChildren: () => import('./login/login.module').then(m => m.LoginModule) },
-  { path: 'support', canActivate: [GuardianGuard], loadChildren: () => import('./support/support.module').then(m => m.SupportModule) }
+  { path: 'support', canActivate: [GuardianGuard], loadChildren: () => import('./support/support.module').then(m => m.SupportModule) },
+  { path: '**', redirectTo: 'home' }
 ];
 
 @NgModule({

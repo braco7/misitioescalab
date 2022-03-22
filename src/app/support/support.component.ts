@@ -1,5 +1,5 @@
 import { Component, Inject } from '@angular/core';
-import { FormControl, FormGroupDirective, NgForm, Validators } from '@angular/forms';
+import { FormControl, FormGroup, FormGroupDirective, NgForm, Validators } from '@angular/forms';
 import { ErrorStateMatcher } from '@angular/material/core';
 /** Error when invalid control is dirty, touched, or submitted. */
 export class MyErrorStateMatcher implements ErrorStateMatcher {
@@ -17,15 +17,17 @@ export class MyErrorStateMatcher implements ErrorStateMatcher {
   styleUrls: ['./support.component.css']
 })
 export class SupportComponent {
+
+
   /*Form*/
-  unameFormControl = new FormControl('', [
+  nombreFormControl = new FormControl('', [
     Validators.required,
   ]);
   emailFormControl = new FormControl('', [
     Validators.required,
     Validators.email,
   ]);
-  pwdFormControl = new FormControl('', [
+  msgFormControl = new FormControl('', [
     Validators.required,
     Validators.minLength(8),
   ]);

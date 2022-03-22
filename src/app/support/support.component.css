@@ -1,0 +1,22 @@
+.center {
+  width: 20%;
+  margin: 10% auto;
+  padding: 20px 20px 30px 20px;
+  border: 0px grey solid;
+  border-radius: 0.5rem;
+  background-color: rgb(231, 242, 243);
+}
+form {
+  display: flex;
+  flex-direction: column;
+}
+
+button {
+  padding: 10px;
+}
+h2 {
+  text-align: center;
+  font-size: 2rem;
+  margin-bottom: 3rem;
+  margin-top: 1.2rem;
+}

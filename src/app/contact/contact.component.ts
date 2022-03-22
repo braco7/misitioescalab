@@ -18,7 +18,7 @@ export class ContactComponent implements OnInit {
     })
 
   opciones: string[] = [
-    "Precio", "Servicios", "Empleo"
+    "Precio", "Servicios", "Empleo", "Otros"
   ]
 
   constructor() { }
