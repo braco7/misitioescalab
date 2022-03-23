@@ -1,0 +1,16 @@
+<div class="example-card detalles">
+  <mat-list role="list">
+    <mat-list-item role="listitem">
+      <strong>MarketCap (USD):</strong>
+      <span>$ {{ moneda?.marketCap | number: "1.0-2" }}</span>
+    </mat-list-item>
+    <mat-list-item role="listitem">
+      <strong>Precio en Btc: </strong>
+      <span>{{ moneda?.priceBtc | number: "1.0-8" }}</span>
+    </mat-list-item>
+    <mat-list-item role="listitem">
+      <strong>Ranking: </strong>
+      <span>{{ moneda?.rank }}</span>
+    </mat-list-item>
+  </mat-list>
+</div>

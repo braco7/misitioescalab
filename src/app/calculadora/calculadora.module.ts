@@ -5,12 +5,14 @@ import { CalculadoraRoutingModule } from './calculadora-routing.module';
 import { CalculadoraComponent } from './calculadora.component';
 import { MaterialModule } from '../material/material/material.module';
 import { DetalleComponent } from './detalle/detalle.component';
+import { MasdetallesComponent } from './detalle/masdetalles/masdetalles.component';
 
 
 @NgModule({
   declarations: [
     CalculadoraComponent,
-    DetalleComponent
+    DetalleComponent,
+    MasdetallesComponent
   ],
   imports: [
     CommonModule,

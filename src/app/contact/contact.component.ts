@@ -14,7 +14,8 @@ export class ContactComponent implements OnInit {
     ({
       opciones: new FormControl("", [Validators.required]),
       nombre: new FormControl("", [Validators.required, Validators.minLength(4)]),
-      correo: new FormControl("", [Validators.required, Validators.email])
+      correo: new FormControl("", [Validators.required, Validators.email]),
+      mensaje: new FormControl("")
     })
 
   opciones: string[] = [
@@ -25,11 +26,9 @@ export class ContactComponent implements OnInit {
 
   ngOnInit(): void { }
 
-  validar() {
-    if (this.formulario.get("nombre")?.dirty && this.formulario.get("nombre")?.invalid) {
-      this.mensaje = "El nombre debe tener entre 3 y 15 caracteres"
-    } else {
-      this.mensaje = ""
-    }
+
+  limpiar() {
+    this.formulario.reset()
   }
+
 }

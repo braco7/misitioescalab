@@ -2,9 +2,10 @@
   <h2>Soporte</h2>
   <form>
     <mat-form-field appearance="fill">
-      <mat-label>User Name</mat-label>
+      <mat-label>Nombre</mat-label>
       <input
         matInput
+        autocomplete="off"
         [formControl]="nombreFormControl"
         [errorStateMatcher]="matcher"
         required
@@ -16,14 +17,13 @@
     <mat-form-field class="example-full-width" appearance="fill">
       <mat-label>Email</mat-label>
       <input
-        type="email"
         matInput
+        type="email"
+        autocomplete="off"
         [formControl]="emailFormControl"
         [errorStateMatcher]="matcher"
-        placeholder="Ex. pat@example.com"
-        required
+        [value]="correo"
       />
-      <mat-hint>correo@correo.cor</mat-hint>
       <mat-error
         *ngIf="
           emailFormControl.hasError('email') &&
@@ -40,6 +40,7 @@
       <mat-label>mensaje</mat-label>
       <input
         matInput
+        autocomplete="off"
         [formControl]="msgFormControl"
         [errorStateMatcher]="matcher"
         required
@@ -53,7 +54,7 @@
           !msgFormControl.hasError('required')
         "
       >
-        Max lenght <strong>8 char</strong>
+        Debe escribir 15 o mas caracteres
       </mat-error> </mat-form-field
     ><br />
 
@@ -62,6 +63,7 @@
       type="submit"
       mat-raised-button
       color="primary"
+      (click)="limpiar()"
     >
       Submit
     </button>

@@ -1,20 +1,16 @@
 <div class="container">
-  <h2>Datos sobre: {{ monedaCompleta.name }}</h2>
+  <h2>Datos sobre: {{ monedaCompleta?.name }}</h2>
   <mat-card class="example-card">
     <mat-card-header>
       <div mat-card-avatar>
         <img
-          style="width: 70%; margin: 10px 0px 5px 10px"
+          style="width: 70%; margin: 0px 0px 0px 5px"
           mat-card-image
           alt="Coin Icon"
           [src]="monedaCompleta?.icon"
         />
       </div>
       <mat-card-title>{{ monedaCompleta?.id | titlecase }}</mat-card-title>
-      <mat-card-subtitle>
-        <strong>Precio (BTC):</strong>
-        {{ monedaCompleta?.priceBtc | number: "1.0-8" }}</mat-card-subtitle
-      >
     </mat-card-header>
     <img
       style="width: 70%"
@@ -35,3 +31,4 @@
     </mat-card-actions>
   </mat-card>
 </div>
+<app-masdetalles [moneda]="monedaCompleta"></app-masdetalles>

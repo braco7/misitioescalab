@@ -68,10 +68,16 @@
           autocomplete="off"
           matInput
           placeholder="Escriba su mensaje"
+          formControlName="mensaje"
         ></textarea>
       </mat-form-field>
 
-      <button [disabled]="formulario.invalid" mat-raised-button color="accent">
+      <button
+        [disabled]="formulario.invalid"
+        mat-raised-button
+        color="accent"
+        (click)="limpiar()"
+      >
         Enviar
       </button>
     </form>

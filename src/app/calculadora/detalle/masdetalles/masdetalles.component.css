@@ -1,0 +1,10 @@
+.detalles {
+  margin-top: -20px;
+  margin-bottom: 6rem;
+  max-width: 400px;
+}
+
+span {
+  display: inline-block;
+  margin-left: 10px;
+}
