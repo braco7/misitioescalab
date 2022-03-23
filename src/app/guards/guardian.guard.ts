@@ -21,7 +21,7 @@ export class GuardianGuard implements CanActivate {
           if (logged) {
             return true
           } else {
-            return this.router.parseUrl("contact")
+            return this.router.parseUrl("home")
           }
         }
         ));
