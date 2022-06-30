@@ -1,4 +1,5 @@
-# Crudpaises
+# Crypto
+Deployed under the Netlify link https://glittering-creponne-24daf2.netlify.app/
 
 This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 12.2.9.
 
